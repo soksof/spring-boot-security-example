@@ -1,0 +1,80 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}" with:title="'Create a new Tour'">
+<th:block layout:fragment="content">
+
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Update an existing tour</h3>
+                        <p>Please fill out all necessary information!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <!-- Start Sample Area -->
+    <section class="sample-text-area">
+        <div class="container box_1170">
+            <div class="col-lg-8 col-md-8">
+                <h3 class="mb-30">Tour information</h3>
+                <form th:action="@{/tour/update}" method="POST" th:object="${newTour}">
+                    <div class="mt-10">
+                        <label for="title">Τίτλος</label>
+                        <input type="text" name="title" placeholder="Τίτλος" id="title" th:field="*{title}"
+                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Τίτλος'" required
+                               class="single-input">
+                    </div>
+                    <div class="mt-10">
+                        <label for="subtitle">Υπότιτλος</label>
+                        <input type="text" name="subtitle" placeholder="Υπότιτλος" id="subtitle" th:field="*{subtitle}"
+                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Υπότιτλος'" required
+                               class="single-input">
+                    </div>
+                    <div class="mt-10">
+                        <label for="days">Αριθμός ημερών</label>
+                        <input type="text" name="days" placeholder="Αριθμός ημερών" id="days" th:field="*{days}"
+                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Αριθμός ημερών'" required
+                               class="single-input">
+                    </div>
+                    <div class="input-group-icon mt-10">
+                        <div class="icon"><i class="fa fa-eur" aria-hidden="true"></i></div>
+                        <input type="text" name="price" placeholder="Κόστος" id="price" th:field="*{price}"
+                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Κόστος'" required
+                               class="single-input">
+                    </div>
+                    <p>
+                        <div class="reset_btn">
+                            <button class="boxed-btn4" type="submit">Update Tour</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Sample Area -->
+
+
+
+<!--    <div class="bradcam_area bradcam_bg_3">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-xl-12">-->
+<!--                    <div class="bradcam_text text-center">-->
+<!--                        <h3>Create new tour</h3>-->
+<!--                        <p>Please fill out all necessary information</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+</th:block>
+</html>
