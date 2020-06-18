@@ -28,7 +28,7 @@
         <div class="container box_1170">
             <div class="col-lg-8 col-md-8">
                 <h3 class="mb-30">New Tour information</h3>
-                <form th:action="@{/tour/new}" method="POST" th:object="${newTour}">
+                <form th:action="@{/admin/tour/new}" method="POST" th:object="${newTour}">
                     <div class="mt-10">
                         <label for="title">Τίτλος</label>
                         <input type="text" name="title" placeholder="Τίτλος" id="title" th:field="*{place}"

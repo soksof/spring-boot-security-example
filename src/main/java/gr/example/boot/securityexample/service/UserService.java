@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface UserService {
     void save(User user);
+    void update(User user);
     Optional<User> findByEmail(String email);
     boolean userExists(String email);
     Optional<User> findByName(String name);

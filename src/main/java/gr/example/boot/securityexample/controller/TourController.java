@@ -25,14 +25,14 @@ public class TourController {
         this.tourService = tourService;
     }
 
-    @GetMapping("/tour/new")
+    @GetMapping("/admin/tour/new")
     public String newTour(Model model){
         TourForm newTour = new TourForm();
         model.addAttribute("newTour", newTour);
         return "fragments/tour/new";
     }
 
-    @PostMapping("/tour/new")
+    @PostMapping("/admin/tour/new")
     public String saveNewTour(@ModelAttribute("newTour") @Valid TourForm tourForm, BindingResult result, Model model){
         for(ObjectError error: result.getAllErrors()){
             System.out.println(error.getDefaultMessage());

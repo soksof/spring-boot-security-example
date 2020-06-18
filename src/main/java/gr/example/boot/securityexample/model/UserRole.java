@@ -1,5 +1,6 @@
 package gr.example.boot.securityexample.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,6 +10,7 @@ public class UserRole {
     @Id
     @GeneratedValue
     private int id;
+    @Column(unique = true)
     private String role;
 
     public int getId() {
